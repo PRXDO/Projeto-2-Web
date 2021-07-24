@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js.js"></script>
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="login.js"></script>
+    <script defer src="js.js"></script>
 </head>
 
 <body>
@@ -16,9 +17,8 @@
         <div class="cabecalho-total">
             <div class="cabecalho-esquerda">
                 <div class="logo">
-
                     <img class="img-logo" style="height: 24px; width: 24px"
-                        src="logoVSCode.png" alt="VS Code Logo" />
+                        src="img/logoVSCode.png" alt="VS Code Logo" />
                     <a class="text-logo">Visual Studio Code</a>
                 </div>
                 <ul class="nav-menu">
@@ -31,34 +31,30 @@
                     <li><a class="text-menu">Learn</a></li>
                 </ul>
             </div>
-
             <div class="cabecalho-direita">
 
                 <!-- <div class="container-pesquisa">
                     <div class="icon-search">
-                        <img class="download-icon" src="search.svg" width="16px"
+                        <img class="download-icon" src="img/search.svg" width="16px"
                             height="16px" />
                     </div>
 
                     <a class="text-search">Search Docs</a>
                 </div> -->
 
-
-
                     <div class="dropdown">
                         <div class="button-login">
                             <a href="javascript://" class="bt1"><b>Login</b></a>
-                            <ul class="ul-login">
+                            <ul id="btnlogin" class="ul-login">
                                 <li><a class="text-user-pass">Usuário</a></li>
-                                <li><input type="text"></li>
+                                <li><input required type="email" placeholder="Digite o Usuário"></li>
                                 <li><a class="text-user-pass">Senha</a></li>
-                                <li><input type="password"></li>
-                                <li class="button-entrar"><a class="text-entrar" href="#"><b>Entrar</b></a>
+                                <li><input required type="password" placeholder="Digite a Senha"></li>
+                                <button class="button-entrar" type="submit">Entrar</button>
                                 </li>
                             </ul>
                         </div>
                     </div>
-
 
                 <div class="menu">
                     <div class="menu-toggle">
@@ -66,12 +62,8 @@
                         <div class="two"></div>
                         <div class="three"></div>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
 
         <!-- Fim Cabeçalho -->
@@ -109,7 +101,7 @@
                     </button>
                     <button class="container-text-button2">
                         <img style="width: 100%;height: 100%;"
-                            src="seta1.svg"></button>
+                            src="img/seta1.svg"></button>
                 </div>
                 <p class="container-text-label4">
                     <a class="container-text-label4-link">Other platforms</a>
@@ -121,11 +113,9 @@
                     <p class="container-text-label5-subtext">license and privacy
                         statement.</p>
                 </div>
-
-
             </div>
             <div class="container-img">
-                <img style="width: 100%; height: 100%;" src="home.png" />
+                <img style="width: 100%; height: 100%;" src="img/home.png" />
             </div>
         </div>
 

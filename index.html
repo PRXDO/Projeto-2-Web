@@ -6,8 +6,8 @@
     <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
-    <script type="text/javascript" src="login.js"></script>
-    <script defer src="js.js"></script>
+    <script type="text/javascript" src="dropdown.js"></script>
+    <script defer src="login.js"></script>
 </head>
 
 <body>
@@ -42,10 +42,12 @@
                     <a class="text-search">Search Docs</a>
                 </div> -->
 
-                    <div class="dropdown">
+                    <div id="btnlogin" class="dropdown">
+
                         <div class="button-login">
                             <a href="javascript://" class="bt1"><b>Login</b></a>
-                            <ul id="btnlogin" class="ul-login">
+                            <!-- <a class="bt1-pos-login"><b>Logado</b></a> -->
+                            <ul  class="ul-login">
                                 <li><a class="text-user-pass">Usuário</a></li>
                                 <li><input required type="email" placeholder="Digite o Usuário"></li>
                                 <li><a class="text-user-pass">Senha</a></li>
@@ -53,8 +55,21 @@
                                 <button class="button-entrar" type="submit">Entrar</button>
                                 </li>
                             </ul>
+                        
+
                         </div>
+
                     </div>
+
+                    <div id="usuarioLogado" class="userLogado">
+
+                        <div class="button-login">
+                            <a class="bt1-"><b>Eve Holt</b></a> 
+
+                        </div>
+
+                    </div>
+                    
 
                 <div class="menu">
                     <div class="menu-toggle">

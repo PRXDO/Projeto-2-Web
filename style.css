@@ -155,8 +155,16 @@ li:hover {
   height: 140px;
 }
 
-.text-user-pass {
+/* .text-user-pass {
   color: #25252b;
+} */
+
+.alert-message {
+  display: block;
+  color: red;
+  margin-left: 5px;
+  font-family: 'Segoe UI', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  font-size: 10px;
 }
 
 .text-entrar {

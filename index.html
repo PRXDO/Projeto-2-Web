@@ -8,6 +8,7 @@
     </script>
     <script type="text/javascript" src="dropdown.js"></script>
     <script defer src="login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -46,13 +47,13 @@
 
                         <div class="button-login">
                             <a href="javascript://" class="bt1"><b>Login</b></a>
-                            <!-- <a class="bt1-pos-login"><b>Logado</b></a> -->
                             <ul  class="ul-login">
                                 <li><a class="text-user-pass">Usuário</a></li>
                                 <li><input required type="email" placeholder="Digite o Usuário"></li>
                                 <li><a class="text-user-pass">Senha</a></li>
                                 <li><input required type="password" placeholder="Digite a Senha"></li>
-                                <button class="button-entrar" type="submit">Entrar</button>
+                                <div type="message" class="alert-message"></div>
+                                <button  class="button-entrar" type="submit">Entrar</button>
                                 </li>
                             </ul>
                         
@@ -64,7 +65,7 @@
                     <div id="usuarioLogado" class="userLogado">
 
                         <div class="button-login">
-                            <a class="bt1-"><b>Eve Holt</b></a> 
+                            <a class="bt1"><b>Eve Holt</b></a> 
 
                         </div>
 

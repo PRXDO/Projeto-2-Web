@@ -213,6 +213,17 @@ li:hover {
   color: #ccc;
 }
 
+.input-buscar {
+  margin-top: 4px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+.btn-buscar {
+  height: 35px;
+  border-radius: 3px;  
+}
+
 /* Final Version Bar */
 
 /* Principal */

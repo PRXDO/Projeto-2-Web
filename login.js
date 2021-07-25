@@ -1,4 +1,4 @@
-let logado = localStorage.token !== undefined;
+let statuslogin = localStorage.token !== undefined;
 
 let input1 = document.querySelector('input[type="email"]');
 let input2 = document.querySelector('input[type="password"]');
@@ -7,7 +7,10 @@ let button = document.querySelector('button[type="submit"]');
 let alertmessage = document.querySelector('div[type="message"]');
 
 const btnlogin = document.querySelector('#btnlogin');
-const btnlogin2 = document.querySelector('#usuarioLogado');
+const btnlogado = document.querySelector('#usuarioLogado');
+
+const version = document.querySelector('#version');
+let apibuscar = document.querySelector('#apibuscar');
 
 let texto1 = input1.value;
 let texto2 = input2.value;
@@ -16,8 +19,11 @@ let texto2 = input2.value;
 //cityslicka
 
 const verificaLogin = () => {
-  btnlogin.style.display = logado ? 'none' : 'block';
-  btnlogin2.style.display = logado === false ? 'none' : 'block';
+  btnlogin.style.display = statuslogin ? 'none' : 'block';              //login
+  btnlogado.style.display = statuslogin === false ? 'none' : 'block';   //login
+
+  apibuscar.style.display = statuslogin === false ? 'none' : 'block';   //busca
+  version.style.display = statuslogin ? 'none' : 'block';               //busca
 };
 
 button.addEventListener('click', async () => {
@@ -36,12 +42,13 @@ button.addEventListener('click', async () => {
 
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.open('POST', 'https://reqres.in/api/login', true); //XMLHttpRequest.open(method, url)
-  xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+  xmlhttp.setRequestHeader('Content-Type', "application/json;charset=UTF-8")
   xmlhttp.send(JSON.stringify({ email: input1.value, password: input2.value }));
-  xmlhttp.onload = () => {
+  xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-      logado = true;
-      verificaLogin();
+    localStorage.token = JSON.parse(xmlhttp.responseText).token
+    statuslogin = true;
+    verificaLogin();
     } else if (xmlhttp.status === 400) {
       xmlhttp.send(null);
     }

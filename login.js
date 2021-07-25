@@ -18,19 +18,20 @@ let texto2 = input2.value;
 //eve.holt@reqres.in
 //cityslicka
 
+//Função que ao realizar o login esconde o botão login e mostra o botão de busca
 const verificaLogin = () => {
-  btnlogin.style.display = statuslogin ? 'none' : 'block';              //login
-  btnlogado.style.display = statuslogin === false ? 'none' : 'block';   //login
+  btnlogin.style.display = statuslogin ? 'none' : 'block'; //login
+  btnlogado.style.display = statuslogin === false ? 'none' : 'block'; //login
 
-  apibuscar.style.display = statuslogin === false ? 'none' : 'block';   //busca
-  version.style.display = statuslogin ? 'none' : 'block';               //busca
+  apibuscar.style.display = statuslogin === false ? 'none' : 'block'; //busca
+  version.style.display = statuslogin ? 'none' : 'block'; //busca
 };
 
+//Função Login
 button.addEventListener('click', async () => {
+  //Validação de Campos
   if (input1.value == '') {
     alertmessage.innerHTML = 'Campo de usuario vazio.';
-
-    console.log('1');
   } else if (input1.value.length > 0 && input1.value.length < 3) {
     alertmessage.innerHTML =
       'Campo de usuario não pode ter menos de 3 caracteres.';
@@ -40,17 +41,19 @@ button.addEventListener('click', async () => {
     alertmessage.innerHTML = '';
   }
 
-  const xmlhttp = new XMLHttpRequest();
-  xmlhttp.open('POST', 'https://reqres.in/api/login', true); //XMLHttpRequest.open(method, url)
-  xmlhttp.setRequestHeader('Content-Type', "application/json;charset=UTF-8")
+  const xmlhttp = new XMLHttpRequest(); //Permite que o script realize requisições HTTP partindo do cliente
+  xmlhttp.open('POST', 'https://reqres.in/api/login', true); //XMLHttpRequest.open(method, url),Parametro da Requisição
+  xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
   xmlhttp.send(JSON.stringify({ email: input1.value, password: input2.value }));
+  //Callback AJAX
   xmlhttp.onreadystatechange = function () {
+    //Estado da chamada, Status HTTP
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-    localStorage.token = JSON.parse(xmlhttp.responseText).token
-    statuslogin = true;
-    verificaLogin();
+      localStorage.token = JSON.parse(xmlhttp.responseText).token;
+      statuslogin = true;
+      verificaLogin();
     } else if (xmlhttp.status === 400) {
-      xmlhttp.send(null);
+      xmlhttp.send(null); //Realização da Requisição
     }
   };
 });

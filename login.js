@@ -33,10 +33,14 @@ button.addEventListener('click', async () => {
   if (input1.value == '') {
     alertmessage.innerHTML = 'Campo de usuario vazio.';
   } else if (input1.value.length > 0 && input1.value.length < 3) {
-    alertmessage.innerHTML =
-      'Campo de usuario não pode ter menos de 3 caracteres.';
+    alertmessage.innerHTML = 'Usuario com menos de 3 caracteres.';
   } else if (input2.value.length == '') {
     alertmessage.innerHTML = 'Campo de senha vazio.';
+  } else if (
+    input1.value != 'eve.holt@reqres.in' &&
+    input2.value != 'cityslicka'
+  ) {
+    alertmessage.innerHTML = 'Usuario e senha incorretos.';
   } else {
     alertmessage.innerHTML = '';
   }

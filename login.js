@@ -12,6 +12,9 @@ const btnlogado = document.querySelector('#usuarioLogado');
 const version = document.querySelector('#version');
 let apibuscar = document.querySelector('#apibuscar');
 
+let areaprincipal = document.querySelector('#areaprincipal');
+let areaimg = document.querySelector('#areaimg');
+
 let texto1 = input1.value;
 let texto2 = input2.value;
 
@@ -25,6 +28,9 @@ const verificaLogin = () => {
 
   apibuscar.style.display = statuslogin === false ? 'none' : 'block'; //busca
   version.style.display = statuslogin ? 'none' : 'block'; //busca
+
+  areaprincipal.style.display = statuslogin ? 'none' : 'block'; //busca
+  areaimg.style.display = statuslogin ? 'none' : 'block'; //busca
 };
 
 //Função Login

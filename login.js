@@ -20,9 +20,6 @@ let apiselect = document.querySelector('#apiselect');
 let texto1 = input1.value;
 let texto2 = input2.value;
 
-//eve.holt@reqres.in
-//cityslicka
-
 //Função que ao realizar o login esconde o botão login e mostra o botão de busca
 const verificaLogin = () => {
   btnlogin.style.display = statuslogin ? 'none' : 'block';             //login

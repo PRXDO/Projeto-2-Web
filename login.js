@@ -62,7 +62,7 @@ button.addEventListener('click', async () => {
       statuslogin = true;
       verificaLogin();
     } else if (xmlhttp.status === 400) {
-      xmlhttp.send(null); //Realização da Requisição
+      alertmessage.innerHTML = 'Usuário ou Senha Incorretos.';
     }
   };
 });

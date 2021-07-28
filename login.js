@@ -15,6 +15,8 @@ let apibuscar = document.querySelector('#apibuscar');
 let areaprincipal = document.querySelector('#areaprincipal');
 let areaimg = document.querySelector('#areaimg');
 
+let apiselect = document.querySelector('#apiselect');
+
 let texto1 = input1.value;
 let texto2 = input2.value;
 
@@ -23,14 +25,16 @@ let texto2 = input2.value;
 
 //Função que ao realizar o login esconde o botão login e mostra o botão de busca
 const verificaLogin = () => {
-  btnlogin.style.display = statuslogin ? 'none' : 'block'; //login
-  btnlogado.style.display = statuslogin === false ? 'none' : 'block'; //login
+  btnlogin.style.display = statuslogin ? 'none' : 'block';             //login
+  btnlogado.style.display = statuslogin === false ? 'none' : 'block';  //login
 
-  apibuscar.style.display = statuslogin === false ? 'none' : 'block'; //busca
-  version.style.display = statuslogin ? 'none' : 'block'; //busca
+  apibuscar.style.display = statuslogin === false ? 'none' : 'block';  //busca
+  version.style.display = statuslogin ? 'none' : 'block';              //busca
 
-  areaprincipal.style.display = statuslogin ? 'none' : 'block'; //busca
-  areaimg.style.display = statuslogin ? 'none' : 'block'; //busca
+  areaprincipal.style.display = statuslogin ? 'none' : 'block';        //busca
+  areaimg.style.display = statuslogin ? 'none' : 'block';              //busca
+
+  apiselect.style.display = statuslogin === false ? 'none' : 'block';  //select
 };
 
 //Função Login
@@ -42,11 +46,6 @@ button.addEventListener('click', async () => {
     alertmessage.innerHTML = 'Usuario com menos de 3 caracteres.';
   } else if (input2.value.length == '') {
     alertmessage.innerHTML = 'Campo de senha vazio.';
-  } else if (
-    input1.value != 'eve.holt@reqres.in' &&
-    input2.value != 'cityslicka'
-  ) {
-    alertmessage.innerHTML = 'Usuario e senha incorretos.';
   } else {
     alertmessage.innerHTML = '';
   }

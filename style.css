@@ -191,22 +191,24 @@ li:hover {
   background-color: #25252b;
   width: 100%;
   height: 6.72%;
-  display: table;
+  display: inline-block;
 }
 
 .container-version-bar-text {
   font-family: 'Segoe UI', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
   font-size: 16px;
-
-  display: flex;
   text-align: center;
   vertical-align: middle;
-  display: table-cell;
+  background-color: #25252b;
+}
+
+.container-api-select {
+  text-align: center;
 }
 
 .container-version-bar-text-color {
   color: rgb(12, 152, 242);
-  display: inline;
+  display: inline-block;
 }
 
 .color-version-text-gray {
@@ -507,6 +509,14 @@ li:hover {
     margin-top: -6%;
     width: 95%;
     height: 70%;
+  }
+
+  .container-resultado-pesquisa {
+    width: 250px;
+  }
+
+  #ul-resultado-pesquisa {
+    width: 200px;
   }
   /* FIM PRINCIPAL */
 }
